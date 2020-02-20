@@ -1,0 +1,10 @@
+body {
+  scroll-behavior: smooth;
+  min-height: 200vh;
+  padding-top: 90vh!important;
+}
+
+ img {
+  height: 300px;
+  object-fit: contain;
+}
