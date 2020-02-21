@@ -4,11 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="js/live.js"></script>
+
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/semantic.min.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/rellax.css">
-  <link rel="stylesheet" href="css/lightgallery.min.css">
+  <link rel="stylesheet" href="css/lightgallery.css">
   <link rel="stylesheet" href="css/lg-transitions.min.css">
 
   <title></title>
@@ -16,15 +18,74 @@
 
 <body>
 
-  <div class="container">
-    <div id="lightgallery">
-      <a href="images/berbank-green-vader.jpg">
-        <img src="images/berbank-green-vader.jpg" class="rellax" data-rellax-speed="7"/>
-      </a>
-      <a href="images/daRth.jpg">
-        <img src="images/daRth.jpg" class="rellax" data-rellax-speed="-4"/>
-      </a>
+  <div class="caption" style="display:none;">
+    <h4>Caption2</h4>
+    <p>Desc2</p>
+  </div>
+
+
+  <!-- CONTENT -->
+  <div id="lightgallery">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-3">
+          <a href="images/berbank-green-vader.jpg" data-sub-html=".caption">
+            <img src="images/berbank-green-vader.jpg" class="rellax" data-rellax-speed="5" />
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a href="images/daRth.jpg" data-sub-html=".caption">
+            <img src="images/daRth.jpg" />
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a href="images/darthv4.jpg" data-sub-html=".caption">
+            <img src="images/darthv4.jpg" class="rellax" data-rellax-speed="-2" />
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a href="images/fugstrator-shuttle-wallpaper1.jpg" data-sub-html=".caption">
+            <img src="images/fugstrator-shuttle-wallpaper1.jpg" class="rellax" data-rellax-speed="-7" />
+          </a>
+        </div>
+
+      </div>
     </div>
+
+
+    <br><br><br><br>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <a href="images/berbank-green-vader.jpg" data-sub-html=".caption">
+            <img src="images/berbank-green-vader.jpg" />
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a href="images/daRth.jpg" data-sub-html=".caption">
+            <img src="images/daRth.jpg" class="rellax" data-rellax-speed="-2" />
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a href="images/darthv4.jpg" data-sub-html=".caption">
+            <img src="images/darthv4.jpg" class="rellax" data-rellax-speed="5" />
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a href="images/fugstrator-shuttle-wallpaper1.jpg" data-sub-html=".caption">
+            <img src="images/fugstrator-shuttle-wallpaper1.jpg"/>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
   </div>
 
 
@@ -39,14 +100,18 @@
   <script>
     // Accepts any class name
     var rellax = new Rellax('.rellax');
-  </script>s
+  </script>
   <script src="js/lightgallery.min.js" charset="utf-8"></script>
 
   <script type="text/javascript">
-    lightGallery(document.getElementById('lightgallery'));
-</script>
-  <script src="js/lg-fullscreen.min.js" charset="utf-8"></script>
-  <script src="js/lg-thumbnail.min.js" charset="utf-8"></script>
+    lightGallery(document.getElementById('lightgallery'), {
+      mode: 'lg-slide-circular',
+      thumbnail: true
+      // subHtmlSelectorRelative: true
+
+    });
+  </script>
+  <script src="js/lg-thumbnail.js" charset="utf-8"></script>
 
 </body>
 

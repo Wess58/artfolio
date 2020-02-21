@@ -1,10 +1,16 @@
 body {
   scroll-behavior: smooth;
   min-height: 200vh;
-  padding-top: 90vh!important;
+  padding-top: 20vh !important;
 }
 
- img {
+img {
   height: 300px;
   object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 50px 24px 0 rgba(0, 0, 0, 0.2);
+
+}
+.rellax{
+  position: absolute;
 }
