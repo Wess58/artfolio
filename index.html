@@ -30,22 +30,22 @@
 
       <div class="row">
         <div class="col-md-3">
-          <a href="images/berbank-green-vader.jpg" data-sub-html=".caption">
+          <a href="images/berbank-green-vader.jpg" data-sub-html=".caption" class="image-link">
             <img src="images/berbank-green-vader.jpg" class="rellax" data-rellax-speed="5" />
           </a>
         </div>
         <div class="col-md-3">
-          <a href="images/daRth.jpg" data-sub-html=".caption">
+          <a href="images/daRth.jpg" data-sub-html=".caption" class="image-link">
             <img src="images/daRth.jpg" />
           </a>
         </div>
         <div class="col-md-3">
-          <a href="images/darthv4.jpg" data-sub-html=".caption">
+          <a href="images/darthv4.jpg" data-sub-html=".caption" class="image-link">
             <img src="images/darthv4.jpg" class="rellax" data-rellax-speed="-2" />
           </a>
         </div>
         <div class="col-md-3">
-          <a href="images/fugstrator-shuttle-wallpaper1.jpg" data-sub-html=".caption">
+          <a href="images/fugstrator-shuttle-wallpaper1.jpg" data-sub-html=".caption" class="image-link">
             <img src="images/fugstrator-shuttle-wallpaper1.jpg" class="rellax" data-rellax-speed="-7" />
           </a>
         </div>
@@ -59,22 +59,22 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-3">
-          <a href="images/berbank-green-vader.jpg" data-sub-html=".caption">
+          <a href="images/berbank-green-vader.jpg" data-sub-html=".caption" class="image-link">
             <img src="images/berbank-green-vader.jpg" />
           </a>
         </div>
         <div class="col-md-3">
-          <a href="images/daRth.jpg" data-sub-html=".caption">
+          <a href="images/daRth.jpg" data-sub-html=".caption" class="image-link">
             <img src="images/daRth.jpg" class="rellax" data-rellax-speed="-2" />
           </a>
         </div>
         <div class="col-md-3">
-          <a href="images/darthv4.jpg" data-sub-html=".caption">
+          <a href="images/darthv4.jpg" data-sub-html=".caption" class="image-link">
             <img src="images/darthv4.jpg" class="rellax" data-rellax-speed="5" />
           </a>
         </div>
         <div class="col-md-3">
-          <a href="images/fugstrator-shuttle-wallpaper1.jpg" data-sub-html=".caption">
+          <a href="images/fugstrator-shuttle-wallpaper1.jpg" data-sub-html=".caption" class="image-link">
             <img src="images/fugstrator-shuttle-wallpaper1.jpg"/>
           </a>
         </div>
@@ -106,7 +106,9 @@
   <script type="text/javascript">
     lightGallery(document.getElementById('lightgallery'), {
       mode: 'lg-slide-circular',
-      thumbnail: true
+      thumbnail: true,
+      selector: '.image-link'
+
       // subHtmlSelectorRelative: true
 
     });

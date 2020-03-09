@@ -1,6 +1,6 @@
 body {
   scroll-behavior: smooth;
-  min-height: 200vh;
+  /* min-height: 200vh; */
   padding-top: 20vh !important;
 }
 
@@ -12,5 +12,5 @@ img {
 
 }
 .rellax{
-  position: absolute;
+  /* position: absolute; */
 }
