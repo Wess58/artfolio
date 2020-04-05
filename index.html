@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="text/javascript" src="js/live.js"></script>
 
+
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Ubuntu&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/semantic.min.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -14,9 +16,86 @@
   <link rel="stylesheet" href="css/lg-transitions.min.css">
 
   <title></title>
+
+  <!-- <script type="text/javascript">
+    function myFunction() {
+
+      $('img').each(function() { // selecting all image element on the page
+        if ($("img").complete) {
+          // alert("here");
+          console.log("here now");
+
+          $('img').each(function() {
+
+            $(".image-link").addClass("placeholder");
+
+
+            // $("img").removeClass("placeholder");
+
+          });
+        } else {
+
+          $('img').each(function() {
+            console.log("here");
+
+            // $("img").addClass("placeholder");
+
+          });
+          {
+
+          }
+
+        }
+      });
+    }
+
+    // alert("Image loaded: " + );
+  </script> -->
 </head>
 
 <body>
+
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 ">
+          <!-- <div class="neupho">
+
+          </div> -->
+
+          <img id="dots1" class="rellax" data-rellax-speed="8" src="images/square-dot.svg" alt="">
+
+
+          <span class="name rellax" data-rellax-speed="-4">Wesley <br> <br>Mbate</span>
+          <div class="bdBtm2"></div>
+          <div class="bdBtm21"></div>
+
+
+        </div>
+        <div class="col-md-6">
+
+          <div class="bdBtm1"></div>
+
+          <div class="bdBtm12"></div>
+
+          <img id="dots2" class="rellax" data-rellax-speed="-2" src="images/square-dot.svg" alt="">
+
+
+
+          <h1>DRAW</h1>
+          <h5>or get</h5>
+          <h1>DRAWN</h1>
+          <h5>from it</h5>
+
+          <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+          <button class="btn btn-md">CALL TO ACTION</button>
+
+
+        </div>
+      </div>
+
+    </div>
+  </main>
 
   <div class="caption" style="display:none;">
     <h4>Caption2</h4>
@@ -26,27 +105,53 @@
 
   <!-- CONTENT -->
   <div id="lightgallery">
-    <div class="container">
-
+    <div class="container mb-5">
       <div class="row">
-        <div class="col-md-3">
-          <a href="images/berbank-green-vader.jpg" data-sub-html=".caption" class="image-link">
-            <img src="images/berbank-green-vader.jpg" class="rellax" data-rellax-speed="5" />
+        <div class="col-md-3 ui">
+          <a href="images/2017-1.jpg" data-sub-html=".caption" class="image-link">
+            <img id="myImg" src="images/2017-1.jpg" class="rellax" data-rellax-speed="-4" />
           </a>
         </div>
-        <div class="col-md-3">
-          <a href="images/daRth.jpg" data-sub-html=".caption" class="image-link">
-            <img src="images/daRth.jpg" />
+        <div class="col-md-3 ui">
+          <a href="images/2017-2.jpg" data-sub-html=".caption" class="image-link">
+            <img src="images/2017-2.jpg" />
           </a>
         </div>
-        <div class="col-md-3">
-          <a href="images/darthv4.jpg" data-sub-html=".caption" class="image-link">
-            <img src="images/darthv4.jpg" class="rellax" data-rellax-speed="-2" />
+        <div class="col-md-3 ui">
+          <a href="images/2017-3.jpg" data-sub-html=".caption" class="image-link">
+            <img src="images/2017-3.jpg" class="rellax" data-rellax-speed="1" />
           </a>
         </div>
-        <div class="col-md-3">
-          <a href="images/fugstrator-shuttle-wallpaper1.jpg" data-sub-html=".caption" class="image-link">
-            <img src="images/fugstrator-shuttle-wallpaper1.jpg" class="rellax" data-rellax-speed="-7" />
+        <div class="col-md-3 ui">
+          <a href="images/2017-4.jpg" data-sub-html=".caption" class="image-link">
+            <img src="images/2017-4.jpg" class="rellax" data-rellax-speed="-3" />
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="container-fluid mb-5">
+      <div class="row">
+        <div class="col-md-3 ui">
+          <a href="images/2017-5.jpg" data-sub-html=".caption" class="image-link">
+            <img id="myImg" src="images/2017-5.jpg" class="rellax" data-rellax-speed="-3" />
+          </a>
+        </div>
+        <div class="col-md-3 ui">
+          <a href="images/2017-6.jpg" data-sub-html=".caption" class="image-link">
+            <img src="images/2017-6.jpg" class="rellax" data-rellax-speed="-2" />
+          </a>
+        </div>
+        <div class="col-md-3 ui">
+          <a href="images/2017-7.jpg" data-sub-html=".caption" class="image-link">
+            <img src="images/2017-7.jpg" class="rellax" data-rellax-speed="-1" />
+          </a>
+        </div>
+        <div class="col-md-3 ui">
+          <a href="images/2017-8.jpg" data-sub-html=".caption" class="image-link">
+            <img src="images/2017-8.jpg"  />
           </a>
         </div>
 
@@ -56,32 +161,34 @@
 
     <br><br><br><br>
 
+
+    <!--
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 ui">
           <a href="images/berbank-green-vader.jpg" data-sub-html=".caption" class="image-link">
             <img src="images/berbank-green-vader.jpg" />
           </a>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 ui">
           <a href="images/daRth.jpg" data-sub-html=".caption" class="image-link">
             <img src="images/daRth.jpg" class="rellax" data-rellax-speed="-2" />
           </a>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 ui">
           <a href="images/darthv4.jpg" data-sub-html=".caption" class="image-link">
             <img src="images/darthv4.jpg" class="rellax" data-rellax-speed="5" />
           </a>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 ui">
           <a href="images/fugstrator-shuttle-wallpaper1.jpg" data-sub-html=".caption" class="image-link">
-            <img src="images/fugstrator-shuttle-wallpaper1.jpg"/>
+            <img src="images/fugstrator-shuttle-wallpaper1.jpg" />
           </a>
         </div>
 
       </div>
 
-    </div>
+    </div> -->
 
 
 

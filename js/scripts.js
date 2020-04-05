@@ -8,11 +8,16 @@
 // }
 // });
 
-$('.rellax').each(function() {
-  $(this).css({
-    "left": Math.random() * $(".container").outerHeight,
-    "left": Math.random() * $(".container-fluid").outerHeight,
-    "top": Math.random() * window.outerHeight
+$(document).ready(function() {
+  $('.image-link').each(function() {
+    $(this).css({
+      "left": Math.random() * $(".container").outerHeight,
+      "left": Math.random() * $(".container-fluid").outerHeight
+      // "top": Math.random() * window.outerHeight
 
-  })
+    })
+  });
+
+
+
 });
