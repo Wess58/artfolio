@@ -32,7 +32,7 @@ $( '#sendMailForm' ).submit(function ( e ) {
     };
     // POST data to the php file
     $.ajax({
-        url: 'mail.php',
+        url: 'js/mail.php',
         data: data,
         type: 'POST',
         success: function (data) {
