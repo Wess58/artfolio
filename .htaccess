@@ -1,6 +1,6 @@
 RewriteEngine on
 
-DirectoryIndex index.html
+#DirectoryIndex index.html
 
 RewriteCond %{REQUEST_FILENAME} !-d
 
