@@ -6,7 +6,7 @@
    $email = $_POST['email'];
    $contact = $_POST['contact'];
    $postmessage = $_POST['message'];
-   $to = "example@email.com";
+   $to = "wesleymbate@gmail.com";
    $subject = "Contact Us";
    // Email Template
    $message = "<b>Name : </b>". $name ."<br>";
