@@ -21,7 +21,7 @@ main {
 main h1 {
   font-family: 'Ubuntu', sans-serif;
   color: #3c4043;
-  font-size: 5rem;
+  font-size: 5.5rem;
   margin: 0;
   text-shadow: 10px 30px 10px #0002;
   /* transform: translateZ(100px); */
@@ -30,7 +30,7 @@ main h1 {
 main h5 {
   font-family: 'Ubuntu', sans-serif;
   color: #3c4043;
-  font-size: 1.5rem;
+  font-size: 2rem;
   position: relative;
   top: -5px;
   left: 200px;
@@ -38,8 +38,14 @@ main h5 {
 }
 
 main p {
+
   color: #80868b;
   font-size: 16px;
+  font-weight: 600;
+}
+main .callToAction{
+  color: #000!important;
+  background-color: #FFFFCC;
 }
 
 main .name {
