@@ -1,3 +1,188 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.css';
+// @import 'assets/css/rellax.css';
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Ubuntu&display=swap');
+
+body {
+  scroll-behavior: smooth;
+}
+
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  font-family: 'Comfortaa', cursive;
+}
+/* ************************************************** */
+/* MAIN SECTION */
+/* ************************************************** */
+* img::selection {
+  background-color: transparent!important;
+  user-drag: none!important;
+  user-select: none!important;
+  -moz-user-select: none!important;
+  -webkit-user-drag: none!important;
+  -webkit-user-select: none!important;
+  -ms-user-select: none!important;
+}
+
+main {
+  padding-top: 15vh !important;
+  min-height: 90vh;
+
+  h1,
+  h1::selection,
+  h5::selection,
+  p::selection,
+  span::selection {
+    font-family: 'Ubuntu', sans-serif;
+    color: #3c4043;
+    font-size: 5.5rem;
+    margin: 0;
+    text-shadow: 10px 30px 10px #0002;
+    /* transform: translateZ(100px); */
+  }
+
+  h5 {
+    font-family: 'Ubuntu', sans-serif;
+    color: #3c4043;
+    font-size: 2rem;
+    position: relative;
+    top: -5px;
+    left: 150px;
+    margin: 0;
+  }
+
+  p {
+    color: #80868b;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .callToAction {
+    color: #000!important;
+    background-color: #FFFFCC;
+  }
+
+  .name {
+    color: #80868b33;
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    line-height: 70px;
+    font-size: 15rem;
+    font-weight: 600;
+    z-index: -100;
+  }
+
+  .bdBtm1 {
+    background-color: #FFFFCC;
+    width: 200px;
+    height: 40px;
+    border-radius: 50px;
+    /* position: absolute;
+    top: -50px; */
+    box-shadow: 10px 10px 50px #d9d9ad, -10px -10px 50px #ffffeb;
+    z-index: -100;
+    margin-bottom: 50px;
+  }
+
+  .bdBtm12 {
+    background-color: transparent;
+    border: 2px solid #FFFF00;
+    width: 300px;
+    height: 60px;
+    border-radius: 50px;
+    position: absolute;
+    top: 10px;
+    left: -100px;
+    /* box-shadow: 10px 10px 60px #cc6d6d,
+      -10px -10px 60px #ff9393; */
+    z-index: -200;
+    margin-bottom: 50px;
+  }
+
+  .bdBtm2 {
+    background-color: #FFFFCC;
+    width: 400px;
+    height: 40px;
+    border-radius: 50px;
+    position: absolute;
+    top: 400px;
+    box-shadow: 20px 20px 60px #d9d9ad, -20px -20px 60px #ffffeb;
+    z-index: -50;
+  }
+
+  .bdBtm21 {
+    background-color: transparent;
+    border: 2px solid #FFFF00;
+    width: 400px;
+    height: 60px;
+    border-radius: 50px;
+    position: absolute;
+    top: 400px;
+    left: -100px;
+    /* box-shadow: 10px 10px 60px #cc6d6d,
+      -10px -10px 60px #ff9393; */
+    z-index: -60;
+    margin-bottom: 50px;
+  }
+
+  #dots1 {
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    width: 150px;
+    opacity: 0.3;
+  }
+
+  #dots2 {
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 10px;
+    right: -150px;
+  }
+}
+
+.neupho {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 11px 11px 22px #cccccc, -11px -11px 22px #ffffff;
+}
+@media (max-width:3000px) {
+  .container {
+    max-width: 70vw!important;
+  }
+}
+@media (max-width:2000px) {
+  .container {
+    max-width: 70vw!important;
+  }
+}
+@media (max-width:1700px) {
+  .container {
+    max-width: 75vw!important;
+  }
+}
+@media (max-width:1500px) {
+  .container {
+    max-width: 80vw!important;
+  }
+}
+@media (max-width:1350px) {
+  .container {
+    max-width: 80vw!important;
+  }
+}
+@media (max-width:770px) {
+  .container {
+    max-width: 90vw!important;
+  }
+}
