@@ -1,21 +1,42 @@
 .gallery {
+  .sticky-div {
+    position: sticky;
+    top: 0px;
+    z-index: 20;
+    background-color: #fff9;
+    padding: 20px 0px;
+
+  }
+
   .tabs-section {
-    // position: sticky;
-    // top: 100px;
     background-color: #f1f1f1!important;
-    border-radius: 20px;
+    border-radius: 30px;
     display: inline-block;
     overflow: hidden;
-    border: 1px solid #f1f1f1;
-
+    border: 2px solid #f1f1f1;
 
     .btn {
       background-color: transparent;
-      padding: 10px 20px;
-      border-radius: 20px;
+      padding: 15px 30px;
+      border-radius: 30px;
       font-weight: 600;
       letter-spacing: 1px;
       color: #80868b;
+      outline: none!important;
+      box-shadow: none!important;
+    }
+  }
+
+  h3 {
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #3c4043;
+    margin-bottom: 30px;
+    margin-top: 50px;
+
+    span {
+      padding-bottom: 10px;
+      border-bottom: 2px solid;
     }
   }
 
@@ -30,7 +51,16 @@
   }
 }
 
+.modal{
+  img{
+    height: 400px;
+    width: auto;
+    object-fit: contain;
+  }
+}
+
 .active-tab {
   background-color: #fff!important;
   color: #3c4043!important;
+  transition: all 0.2s linear;
 }

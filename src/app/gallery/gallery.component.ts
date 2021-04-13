@@ -24,6 +24,7 @@ export class GalleryComponent implements OnInit {
   imgs_21: any[] = json_21;
 
   selected: any;
+  year:any = 'all';
 
 
   constructor() { }
@@ -32,6 +33,9 @@ export class GalleryComponent implements OnInit {
   }
 
   setOnModal(index, year): void {
+
+    console.log(index,year);
+
     if (year === '2016') {
       this.imgs_16.forEach(image => {
         if (index === this.imgs_16.indexOf(image)) {
@@ -74,6 +78,10 @@ export class GalleryComponent implements OnInit {
         }
       });
     }
+  }
+
+  filterByYear(year):void{
+    this.year = year;
   }
 
 
