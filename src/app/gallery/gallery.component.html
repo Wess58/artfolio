@@ -1,0 +1,48 @@
+<div class="gallery">
+  <div class="container mb-5">
+
+
+    <div  align="center" class="mb-5">
+    <span class="tabs-section">
+      <button class="btn">2017</button>
+      <button class="btn active-tab">2018</button>
+      <button class="btn">2019</button>
+      <button class="btn">2020</button>
+    </span>
+    </div>
+
+
+    <div class="row">
+
+      <div class="col-md-3" *ngFor="let image of imgs_17;index as i">
+        <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(i,'2017')"/>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-3" *ngFor="let image of imgs_18;index as i">
+        <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(i,'2018')"/>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-3" *ngFor="let image of imgs_19;index as i">
+        <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(i,'2019')"/>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-3" *ngFor="let image of imgs_20;index as i">
+        <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(i,'2020')"/>
+      </div>
+
+    </div>
+
+  </div>
+</div>

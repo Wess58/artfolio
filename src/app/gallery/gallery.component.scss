@@ -1,0 +1,36 @@
+.gallery {
+  .tabs-section {
+    // position: sticky;
+    // top: 100px;
+    background-color: #f1f1f1!important;
+    border-radius: 20px;
+    display: inline-block;
+    overflow: hidden;
+    border: 1px solid #f1f1f1;
+
+
+    .btn {
+      background-color: transparent;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #80868b;
+    }
+  }
+
+  img {
+    height: 320px;
+    width: 90%;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 40px;
+    box-shadow: 0 30px 15px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+
+.active-tab {
+  background-color: #fff!important;
+  color: #3c4043!important;
+}

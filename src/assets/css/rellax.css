@@ -114,11 +114,6 @@ header h3 {
   Main
 ------------------------------------*/
 
-main,
-.main {
-  overflow: hidden;
-}
-
 .section {
   position: relative;
 }

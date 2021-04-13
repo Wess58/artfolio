@@ -310,5 +310,3 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     return true;
 });
 //# sourceMappingURL=tilt.jquery.js.map
-
-
