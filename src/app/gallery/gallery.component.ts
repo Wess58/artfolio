@@ -82,7 +82,36 @@ export class GalleryComponent implements OnInit {
 
   filterByYear(year):void{
     this.year = year;
+    this.scrollToContent();
+
   }
+
+  scrollToContent(): void {
+  // console.log('trying to scroll');
+  // const element = document.getElementById('listing');
+  //
+  console.log();
+
+  if (window.innerWidth <= 770) {
+    const headerOffset = 200;
+    const elementPosition = document.getElementById('listing').offsetTop;
+
+    const offsetPosition = elementPosition - headerOffset;
+
+    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+
+
+  }
+  else if (window.innerWidth > 770) {
+    const elementPosition = document.getElementById('listing').offsetTop;
+    const headerOffset = 250;
+
+    const offsetPosition = elementPosition - headerOffset;
+    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+  }
+}
+
+
 
 
 }

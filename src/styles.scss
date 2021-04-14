@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.css';
-// @import 'assets/css/rellax.css';
+@import '~bootstrap/dist/css/bootstrap.css'; // @import 'assets/css/rellax.css';
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Ubuntu&display=swap');
 
 body {
@@ -35,17 +34,19 @@ main {
   padding-top: 15vh !important;
   min-height: 90vh;
 
-  h1,
   h1::selection,
   h5::selection,
   p::selection,
   span::selection {
+    background-color: transparent!important;
+  }
+
+  h1 {
     font-family: 'Ubuntu', sans-serif;
     color: #3c4043;
     font-size: 5.5rem;
     margin: 0;
     text-shadow: 10px 30px 10px #0002;
-    /* transform: translateZ(100px); */
   }
 
   h5 {
@@ -64,11 +65,6 @@ main {
     font-weight: 600;
   }
 
-  .callToAction {
-    color: #000!important;
-    background-color: #FFFFCC;
-  }
-
   .name {
     color: #80868b33;
     position: absolute;
@@ -85,8 +81,6 @@ main {
     width: 200px;
     height: 40px;
     border-radius: 50px;
-    /* position: absolute;
-    top: -50px; */
     box-shadow: 10px 10px 50px #d9d9ad, -10px -10px 50px #ffffeb;
     z-index: -100;
     margin-bottom: 50px;
@@ -183,6 +177,24 @@ main {
 }
 @media (max-width:770px) {
   .container {
-    max-width: 90vw!important;
+    max-width: 100vw!important;
+  }
+
+  main {
+    overflow-x: hidden;
+  }
+
+  h1{
+    font-size: 4.5rem!important;
+  }
+  .name {
+    color: #f1f1f177!important;
+  }
+
+  #dots1,
+  #dots2,
+  .bdBtm1,
+  .bdBtm2 {
+    display: none!important;
   }
 }

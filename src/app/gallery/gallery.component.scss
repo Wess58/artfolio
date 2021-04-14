@@ -1,11 +1,10 @@
 .gallery {
   .sticky-div {
     position: sticky;
-    top: 0px;
+    top: 0;
     z-index: 20;
     background-color: #fff9;
-    padding: 20px 0px;
-
+    padding: 20px 0;
   }
 
   .tabs-section {
@@ -51,8 +50,8 @@
   }
 }
 
-.modal{
-  img{
+.modal {
+  img {
     height: 400px;
     width: auto;
     object-fit: contain;
@@ -63,4 +62,25 @@
   background-color: #fff!important;
   color: #3c4043!important;
   transition: all 0.2s linear;
+}
+@media (max-width:770px) {
+  .sticky-div {
+    background-color: transparent!important;
+  }
+
+  .tabs-section {
+    // width: 100vw!important;
+    .btn {
+      padding: 5px 30px!important;
+    }
+  }
+
+  .col-6 {
+    padding: 0 10px!important;
+  }
+
+  img {
+    height: 320px;
+    width: 100%!important;
+  }
 }
