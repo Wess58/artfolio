@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.css'; // @import 'assets/css/rellax.css';
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Ubuntu&display=swap');
-
+@import '../node_modules/@fortawesome/fontawesome-free/css/fontawesome.css';
+@import '../node_modules/@fortawesome/fontawesome-free/css/solid.css';
+@import '../node_modules/@fortawesome/fontawesome-free/css/brands.css';
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 body {
   scroll-behavior: smooth;
 }
@@ -31,8 +34,9 @@ span {
 }
 
 main {
-  padding-top: 15vh !important;
-  min-height: 90vh;
+  padding-top: 10vh !important;
+  min-height: 80vh;
+  overflow-x: hidden;
 
   h1::selection,
   h5::selection,
@@ -136,7 +140,7 @@ main {
   }
 
   #dots2 {
-    transform-style: preserve-3d;
+    // transform-style: preserve-3d;
     position: absolute;
     top: 10px;
     right: -150px;
@@ -164,15 +168,36 @@ main {
   .container {
     max-width: 75vw!important;
   }
+  main {
+    .name {
+      font-size: 13rem;
+    }
+  }
 }
 @media (max-width:1500px) {
   .container {
     max-width: 80vw!important;
   }
+
+  main {
+    .name {
+      font-size: 12rem;
+    }
+    #dots2 {
+      position: absolute;
+      top: 10px;
+      right: -100px!important;
+    }
+  }
 }
 @media (max-width:1350px) {
   .container {
     max-width: 80vw!important;
+  }
+  main {
+    .name {
+      font-size: 10rem;
+    }
   }
 }
 @media (max-width:770px) {
