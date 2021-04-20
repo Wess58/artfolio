@@ -1,13 +1,46 @@
 [{
-  "image_url": "2020-1.jpg"
+  "image_url": "2020-1.JPEG",
+  "year":"2020",
+  "orientation":"Landscape",
+  "size":"A3"
 }, {
-  "image_url": "2020-2.jpg"
+  "image_url": "2020-2.JPEG",
+  "year":"2020",
+  "orientation":"Landscape",
+  "size":"A3"
 }, {
-  "image_url": "2020-3.jpg"
+  "image_url": "2020-3.jpg",
+  "year":"2020",
+  "orientation":"Portrait",
+  "size":"A3"
 }, {
-  "image_url": "2020-4.jpg"
+  "image_url": "2020-4.jpg",
+  "year":"2020",
+  "orientation":"Portrait",
+  "size":"A4"
 }, {
-  "image_url": "2020-5.jpg"
+  "image_url": "2020-5.jpg",
+  "year":"2020",
+  "orientation":"Portrait",
+  "size":"A4"
 }, {
-  "image_url": "2020-6.jpg"
+  "image_url": "2020-6.JPEG",
+  "year":"2020",
+  "orientation":"Landscape",
+  "size":"A3"
+}, {
+  "image_url": "2020-7.JPEG",
+  "year":"2020",
+  "orientation":"Landscape",
+  "size":"A3"
+}, {
+  "image_url": "2020-8.JPEG",
+  "year":"2020",
+  "orientation":"Portrait",
+  "size":"A2"
+}, {
+  "image_url": "2020-9.JPEG",
+  "year":"2020",
+  "orientation":"Portrait",
+  "size":"A3"
 }]
