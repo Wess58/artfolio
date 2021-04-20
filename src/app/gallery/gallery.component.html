@@ -4,11 +4,13 @@
 
     <div align="center" class="sticky-div mb-5">
       <span class="tabs-section">
-        <button class="btn" [ngClass]="{'active-tab':year === 'all'}" (click)="filterByYear('all')">All</button>
+        <button class="btn" [ngClass]="{'active-tab':year === 'all'}" (click)="filterByYear('all')">All&nbsp;</button>
         <button class="btn" [ngClass]="{'active-tab':year === '2017'}" (click)="filterByYear('2017')">2017</button>
-        <button class="btn active-tab" [ngClass]="{'active-tab':year === '2018'}" (click)="filterByYear('2018')">2018</button>
+        <button class="btn" [ngClass]="{'active-tab':year === '2018'}" (click)="filterByYear('2018')">2018</button>
         <button class="btn" [ngClass]="{'active-tab':year === '2019'}" (click)="filterByYear('2019')">2019</button>
         <button class="btn" [ngClass]="{'active-tab':year === '2020'}" (click)="filterByYear('2020')">2020</button>
+        <button class="btn" [ngClass]="{'active-tab':year === '2021'}" (click)="filterByYear('2021')">2021</button>
+
       </span>
     </div>
 
@@ -17,7 +19,7 @@
 
       <h3 [hidden]="year !== 'all' && year !== '2017'"><span>2017</span></h3>
 
-      <div class="row" [hidden]="year !== 'all' && year !== '2017'">
+      <div class="row" [hidden]="year !== 'all' && year !== '2017'" [@fadeIn]>
 
         <div class="col-6 col-md-3" *ngFor="let image of imgs_17;index as i">
           <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(i,'2017')" data-toggle="modal" data-target="#imageModal" />
@@ -28,7 +30,7 @@
 
       <h3 [hidden]="year !== 'all' && year !== '2018'"><span>2018</span></h3>
 
-      <div class="row" [hidden]="year !== 'all' && year !== '2018'">
+      <div class="row" [hidden]="year !== 'all' && year !== '2018'" [@fadeIn]>
 
         <div class="col-6 col-md-3" *ngFor="let image of imgs_18;index as i">
           <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(i,'2018')" data-toggle="modal" data-target="#imageModal" />
@@ -38,7 +40,7 @@
 
       <h3 [hidden]="year !== 'all' && year !== '2019'"><span>2019</span></h3>
 
-      <div class="row" [hidden]="year !== 'all' && year !== '2019'">
+      <div class="row" [hidden]="year !== 'all' && year !== '2019'" [@fadeIn]>
 
         <div class="col-6 col-md-3" *ngFor="let image of imgs_19;index as i">
           <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(i,'2019')" data-toggle="modal" data-target="#imageModal" />
@@ -48,10 +50,20 @@
 
       <h3 [hidden]="year !== 'all' && year !== '2020'"><span>2020</span></h3>
 
-      <div class="row" [hidden]="year !== 'all' && year !== '2020'">
+      <div class="row" [hidden]="year !== 'all' && year !== '2020'" [@fadeIn]>
 
         <div class="col-6 col-md-3" *ngFor="let image of imgs_20;index as i">
           <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(i,'2020')" data-toggle="modal" data-target="#imageModal" />
+        </div>
+
+      </div>
+
+      <h3 [hidden]="year !== 'all' && year !== '2021'"><span>2021</span></h3>
+
+      <div class="row" [hidden]="year !== 'all' && year !== '2021'" [@fadeIn]>
+
+        <div class="col-6 col-md-3" *ngFor="let image of imgs_21;index as i">
+          <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(i,'2021')" data-toggle="modal" data-target="#imageModal" />
         </div>
 
       </div>
@@ -70,17 +82,68 @@
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <span class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></span>
       </div>
-      <div class="modal-body">
-        <img src="assets/images/{{selected?.image_url}}" />
+      <h5>{{selected?.year}} , <span>{{selected?.index + 1}} of {{selected?.total}}</span></h5>
+
+
+      <div class="modal-body" *ngIf="selected">
+
+        <div class="row" *ngIf="selected.orientation === 'Portrait'">
+          <div class="col-md-6">
+            <img src="assets/images/{{selected?.image_url}}" />
+          </div>
+          <div class="col-md-6">
+            <div class="content">
+
+              <div class="mb-2">
+                <span><i class="fas fa-file-image"></i> {{selected.size}} size</span>
+              </div>
+
+              <div class="mb-2">
+                <span><i class="fas fa-external-link-square-alt"></i> {{selected.orientation}} orientation</span>
+              </div>
+
+              <div class="social">
+                <h6>Interested in inquiring about a piece ? </h6>
+                <p>Get in touch on these social platforms</p>
+                <a href="https://www.instagram.com/wess__wesley/" target="_blank"><i class="fab fa-instagram-square"></i></a>
+                <a href="https://wa.me/254703926058?text=Hello%20Wesley,%20My%20name%20is%20****%20and%20I'm%20interested%20in%20inquiring%20about%20a%20piece%20..." target="_blank"><i class="fab fa-whatsapp-square"></i></a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="selected.orientation === 'Landscape'">
+          <img src="assets/images/{{selected?.image_url}}" />
+
+          <br>
+
+          <div class="content">
+
+            <div class="mb-2">
+              <span><i class="fas fa-file-image"></i> {{selected.size}} size</span>
+            </div>
+
+            <div class="mb-2">
+              <span><i class="fas fa-external-link-square-alt"></i> {{selected.orientation}} orientation</span>
+            </div>
+
+            <div class="social">
+              <h6>Interested in inquiring about a piece ? </h6>
+              <p>Get in touch on these social platforms</p>
+              <a href="https://www.instagram.com/wess__wesley/" target="_blank"><i class="fab fa-instagram-square"></i></a>
+              <a href="https://wa.me/254703926058?text=Hello%20Wesley,%20My%20name%20is%20****%20and%20I'm%20interested%20in%20inquiring%20about%20a%20piece%20..." target="_blank"><i class="fab fa-whatsapp-square"></i></a>
+            </div>
+
+          </div>
+
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
   </div>

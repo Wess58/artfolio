@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { style, state, animate, transition, trigger } from '@angular/animations';
+
 import json_16 from '../jsons/2016.json';
 import json_17 from '../jsons/2017.json';
 import json_18 from '../jsons/2018.json';
@@ -7,12 +9,18 @@ import json_20 from '../jsons/2020.json';
 import json_21 from '../jsons/2021.json';
 
 
-
-
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
-  styleUrls: ['./gallery.component.scss']
+  styleUrls: ['./gallery.component.scss'],
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [   // :enter is alias to 'void => *'
+        style({ opacity: 0 }),
+        animate(500, style({ opacity: 1 }))
+      ])
+    ])
+  ]
 })
 export class GalleryComponent implements OnInit {
 
@@ -40,6 +48,9 @@ export class GalleryComponent implements OnInit {
       this.imgs_16.forEach(image => {
         if (index === this.imgs_16.indexOf(image)) {
           this.selected = image;
+          this.selected.index = index;
+          this.selected.total = this.imgs_16.length;
+
         }
       });
     }
@@ -47,6 +58,9 @@ export class GalleryComponent implements OnInit {
       this.imgs_17.forEach(image => {
         if (index === this.imgs_17.indexOf(image)) {
           this.selected = image;
+          this.selected.index = index;
+          this.selected.total = this.imgs_17.length;
+
         }
       });
     }
@@ -54,6 +68,9 @@ export class GalleryComponent implements OnInit {
       this.imgs_18.forEach(image => {
         if (index === this.imgs_18.indexOf(image)) {
           this.selected = image;
+          this.selected.index = index;
+          this.selected.total = this.imgs_18.length;
+
         }
       });
     }
@@ -61,6 +78,10 @@ export class GalleryComponent implements OnInit {
       this.imgs_19.forEach(image => {
         if (index === this.imgs_19.indexOf(image)) {
           this.selected = image;
+          this.selected.index = index;
+          this.selected.total = this.imgs_19.length;
+
+
         }
       });
     }
@@ -68,6 +89,10 @@ export class GalleryComponent implements OnInit {
       this.imgs_20.forEach(image => {
         if (index === this.imgs_20.indexOf(image)) {
           this.selected = image;
+          this.selected.index = index;
+          this.selected.total = this.imgs_20.length;
+
+
         }
       });
     }
@@ -75,6 +100,10 @@ export class GalleryComponent implements OnInit {
       this.imgs_21.forEach(image => {
         if (index === this.imgs_21.indexOf(image)) {
           this.selected = image;
+          this.selected.index = index;
+          this.selected.total = this.imgs_21.length;
+
+
         }
       });
     }
