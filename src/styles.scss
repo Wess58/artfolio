@@ -38,7 +38,7 @@ main {
   min-height: 80vh;
   overflow-x: hidden;
   overflow-y: hidden;
-  
+
   h1::selection,
   h5::selection,
   p::selection,
@@ -191,7 +191,7 @@ main {
     }
   }
 }
-@media (max-width:1350px) {
+@media (max-width:1380px) {
   .container {
     max-width: 80vw!important;
   }
