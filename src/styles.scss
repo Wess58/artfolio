@@ -207,6 +207,8 @@ main {
 
   main {
     overflow-x: hidden;
+    overflow-y: hidden;
+    min-height: 70vh!important;
   }
 
   h1{
