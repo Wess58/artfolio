@@ -37,7 +37,8 @@ main {
   padding-top: 10vh !important;
   min-height: 80vh;
   overflow-x: hidden;
-
+  overflow-y: hidden;
+  
   h1::selection,
   h5::selection,
   p::selection,
