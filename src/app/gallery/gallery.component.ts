@@ -19,6 +19,12 @@ import json_21 from '../jsons/2021.json';
         style({ opacity: 0 }),
         animate(500, style({ opacity: 1 }))
       ])
+    ]),
+    trigger('fadeInSmooth', [
+      transition(':enter', [   // :enter is alias to 'void => *'
+        style({ transform: 'scale(0.8)' }),
+        animate('0.55s ease-in-out', style({ transform: 'scale(1)' }))
+      ])
     ])
   ]
 })
@@ -30,115 +36,76 @@ export class GalleryComponent implements OnInit {
   imgs_19: any[] = json_19;
   imgs_20: any[] = json_20;
   imgs_21: any[] = json_21;
+  jointArrays: any;
 
   selected: any;
-  year:any = 'all';
+  year: any = 'all';
 
 
   constructor() { }
 
   ngOnInit(): void {
+
+    this.jointArrays = this.imgs_16.concat(this.imgs_17, this.imgs_18, this.imgs_19, this.imgs_20, this.imgs_21);
+    // console.log(this.jointArrays);
+
   }
 
-  setOnModal(index, year): void {
+  setOnModal(imageUrl: any): void {
+    // console.log(index,year);
 
-    console.log(index,year);
-
-    if (year === '2016') {
-      this.imgs_16.forEach(image => {
-        if (index === this.imgs_16.indexOf(image)) {
-          this.selected = image;
-          this.selected.index = index;
-          this.selected.total = this.imgs_16.length;
-
-        }
-      });
-    }
-    if (year === '2017') {
-      this.imgs_17.forEach(image => {
-        if (index === this.imgs_17.indexOf(image)) {
-          this.selected = image;
-          this.selected.index = index;
-          this.selected.total = this.imgs_17.length;
-
-        }
-      });
-    }
-    if (year === '2018') {
-      this.imgs_18.forEach(image => {
-        if (index === this.imgs_18.indexOf(image)) {
-          this.selected = image;
-          this.selected.index = index;
-          this.selected.total = this.imgs_18.length;
-
-        }
-      });
-    }
-    if (year === '2019') {
-      this.imgs_19.forEach(image => {
-        if (index === this.imgs_19.indexOf(image)) {
-          this.selected = image;
-          this.selected.index = index;
-          this.selected.total = this.imgs_19.length;
-
-
-        }
-      });
-    }
-    if (year === '2020') {
-      this.imgs_20.forEach(image => {
-        if (index === this.imgs_20.indexOf(image)) {
-          this.selected = image;
-          this.selected.index = index;
-          this.selected.total = this.imgs_20.length;
-
-
-        }
-      });
-    }
-    if (year === '2021') {
-      this.imgs_21.forEach(image => {
-        if (index === this.imgs_21.indexOf(image)) {
-          this.selected = image;
-          this.selected.index = index;
-          this.selected.total = this.imgs_21.length;
-
-
-        }
-      });
-    }
+    this.jointArrays.forEach(image => {
+      if (imageUrl === image.image_url) {
+        this.selected = image;
+        this.selected.index = this.jointArrays.indexOf(image);
+        this.selected.total = this.jointArrays.length;
+      }
+    });
   }
 
-  filterByYear(year):void{
+  filterByYear(year): void {
     this.year = year;
     this.scrollToContent();
 
   }
 
   scrollToContent(): void {
-  // console.log('trying to scroll');
-  // const element = document.getElementById('listing');
-  //
-  console.log();
+    // console.log('trying to scroll');
+    // const element = document.getElementById('listing');
+    //
+    // console.log();
 
-  if (window.innerWidth <= 770) {
-    const headerOffset = 200;
-    const elementPosition = document.getElementById('listing').offsetTop;
+    if (window.innerWidth <= 770) {
+      const headerOffset = 200;
+      const elementPosition = document.getElementById('listing').offsetTop;
 
-    const offsetPosition = elementPosition - headerOffset;
+      const offsetPosition = elementPosition - headerOffset;
 
-    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
 
 
+    }
+    else if (window.innerWidth > 770) {
+      const elementPosition = document.getElementById('listing').offsetTop;
+      const headerOffset = 250;
+
+      const offsetPosition = elementPosition - headerOffset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    }
   }
-  else if (window.innerWidth > 770) {
-    const elementPosition = document.getElementById('listing').offsetTop;
-    const headerOffset = 250;
 
-    const offsetPosition = elementPosition - headerOffset;
-    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+
+  moveImg(i): void {
+    console.log(i);
+
+    if (i <= (this.jointArrays.length - 1) && i >= 0) {
+      this.selected = {};
+
+      this.selected = this.jointArrays[i];
+      this.selected.index = i;
+      this.selected.total = this.jointArrays.length;
+    }
   }
-}
 
 
 

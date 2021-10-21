@@ -3,7 +3,9 @@
     position: sticky;
     top: 0;
     z-index: 20;
-    background-color: #fff9;
+    background-image: linear-gradient(to bottom , #fff , transparent);
+    // background-color: #fff9;
+    backdrop-filter:blur(4px);
     padding: 20px 0;
   }
 
@@ -51,7 +53,9 @@
 }
 
 .modal {
-  background-color: #0007!important;
+  // background-color: #0007!important;
+  backdrop-filter:blur(3px);
+  padding: 0!important !important;
 
   .modal-content {
     background-color: #fefeff;
@@ -72,9 +76,38 @@
     color: #3c4043;
     text-align: center!important;
 
-    span {
+    .fas {
+      margin: 0 15px;
+      font-size: 1.5rem;
+      background-color: #f1f1f1;
+      border-radius: 50%;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.1s;
+
+      &:active,
+      &:focus,
+      &:hover {
+        background-color: #5f6063;
+        color: #f1f1f1;
+      }
+    }
+
+    .fa-angle-left {
+      padding: 5px 12px 5px 10px;
+    }
+
+    .fa-angle-right {
+      padding: 5px 10px 5px 12px;
+    }
+
+    .index-info {
       font-size: 0.95rem!important;
       color: #80868b;
+
+      &::selection {
+        background-color: transparent!important;
+      }
     }
   }
 
@@ -100,8 +133,6 @@
     }
 
     .social {
-      margin-top: 30px;
-
       h6 {
         color: #5f6063;
         font-weight: 600;
@@ -115,19 +146,34 @@
 
       a {
         color: #80868b;
+
         .fab {
           font-size: 2.5rem;
           margin-right: 20px;
           cursor: pointer;
+          transition: all 0.3s;
+
+          &:hover {
+            color: #5f6063;
+          }
         }
       }
+    }
+
+    .btn-close {
+      background-color: #e9e9e9;
+      color: #5f6063;
+      margin-right: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
     }
   }
 
   img {
-    height: 400px;
+    height: 420px;
     width: auto;
-    max-width: 90%;
+    max-width: 92%;
     object-fit: contain;
     background-color: transparent!important;
     user-drag: none!important;
@@ -144,6 +190,12 @@
   color: #3c4043!important;
   transition: all 0.2s linear;
 }
+
+.disabled {
+  cursor: default!important;
+  background-color: #f1f1f1!important;
+  color: #80868b!important;
+}
 @media (max-width:770px) {
   .sticky-div {
     background-color: transparent!important;
@@ -152,12 +204,12 @@
   .tabs-section {
     // width: 100vw!important;
     .btn {
-      padding: 5px 30px!important;
+      padding: 5px 30px!important !important;
     }
   }
 
   .col-6 {
-    padding: 0 10px!important;
+    padding: 0 10px!important !important;
   }
 
   img {
@@ -166,4 +218,5 @@
     width: 100%!important;
     max-width: 100%!important;
   }
+
 }

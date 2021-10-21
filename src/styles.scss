@@ -1,10 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.css'; // @import 'assets/css/rellax.css';
+@import '~bootstrap/dist/css/bootstrap.min.css'; // @import 'assets/css/rellax.css';
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Ubuntu&display=swap');
-@import '../node_modules/@fortawesome/fontawesome-free/css/fontawesome.css';
-@import '../node_modules/@fortawesome/fontawesome-free/css/solid.css';
-@import '../node_modules/@fortawesome/fontawesome-free/css/brands.css';
-@import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
+@import '../node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css';
+@import '../node_modules/@fortawesome/fontawesome-free/css/solid.min.css';
+@import '../node_modules/@fortawesome/fontawesome-free/css/brands.min.css';
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 body {
   scroll-behavior: smooth;
 }
@@ -19,6 +19,12 @@ h6,
 p,
 span {
   font-family: 'Comfortaa', cursive;
+}
+
+* a,
+* button {
+  outline: none !important;
+  box-shadow: none !important;
 }
 /* ************************************************** */
 /* MAIN SECTION */
@@ -68,6 +74,23 @@ main {
     color: #80868b;
     font-size: 16px;
     font-weight: 600;
+  }
+
+  .btn-cta{
+    background-color: #FFFFCC;
+    border-radius: 20px;
+    border: 2px solid #FFFF00;
+    color: #3c4043;
+    letter-spacing: 1px;
+    font-weight: 600;
+    padding: 6px 20px;
+    font-family: 'Comfortaa', cursive;
+
+
+    .fab{
+      font-size: 1.4rem;
+      margin-left: 10px;
+    }
   }
 
   .name {

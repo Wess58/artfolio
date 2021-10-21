@@ -22,7 +22,7 @@
       <div class="row" [hidden]="year !== 'all' && year !== '2017'" [@fadeIn]>
 
         <div class="col-6 col-md-3" *ngFor="let image of imgs_17;index as i">
-          <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(i,'2017')" data-toggle="modal" data-target="#imageModal" />
+          <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(image.image_url)" data-toggle="modal" data-target="#imageModal" />
         </div>
 
       </div>
@@ -33,7 +33,7 @@
       <div class="row" [hidden]="year !== 'all' && year !== '2018'" [@fadeIn]>
 
         <div class="col-6 col-md-3" *ngFor="let image of imgs_18;index as i">
-          <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(i,'2018')" data-toggle="modal" data-target="#imageModal" />
+          <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(image.image_url)" data-toggle="modal" data-target="#imageModal" />
         </div>
 
       </div>
@@ -43,7 +43,7 @@
       <div class="row" [hidden]="year !== 'all' && year !== '2019'" [@fadeIn]>
 
         <div class="col-6 col-md-3" *ngFor="let image of imgs_19;index as i">
-          <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(i,'2019')" data-toggle="modal" data-target="#imageModal" />
+          <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(image.image_url)" data-toggle="modal" data-target="#imageModal" />
         </div>
 
       </div>
@@ -53,7 +53,7 @@
       <div class="row" [hidden]="year !== 'all' && year !== '2020'" [@fadeIn]>
 
         <div class="col-6 col-md-3" *ngFor="let image of imgs_20;index as i">
-          <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(i,'2020')" data-toggle="modal" data-target="#imageModal" />
+          <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(image.image_url)" data-toggle="modal" data-target="#imageModal" />
         </div>
 
       </div>
@@ -63,7 +63,7 @@
       <div class="row" [hidden]="year !== 'all' && year !== '2021'" [@fadeIn]>
 
         <div class="col-6 col-md-3" *ngFor="let image of imgs_21;index as i">
-          <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(i,'2021')" data-toggle="modal" data-target="#imageModal" />
+          <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(image.image_url)" data-toggle="modal" data-target="#imageModal" />
         </div>
 
       </div>
@@ -79,17 +79,22 @@
 
 <!-- Modal -->
 <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+  <div class="modal-dialog  modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <span class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></span>
       </div>
-      <h5>{{selected?.year}} , <span>{{selected?.index + 1}} of {{selected?.total}}</span></h5>
+      <h5>
+        <span><i class="fas fa-angle-left" (click)="moveImg(selected.index - 1)" [ngClass]="{'disabled':selected?.index === 0}"></i></span>
+        <span class="index-info">{{selected?.index + 1}} of {{selected?.total}}</span>
+        <span><i class="fas fa-angle-right" (click)="moveImg(selected.index + 1)" [ngClass]="{'disabled':selected?.index === (selected?.total - 1)}"></i></span>
+
+      </h5>
 
 
       <div class="modal-body" *ngIf="selected">
 
-        <div class="row" *ngIf="selected.orientation === 'Portrait'">
+        <div class="row" *ngIf="selected.orientation === 'Portrait'" [@fadeInSmooth]>
           <div class="col-md-6">
             <img src="assets/images/{{selected?.image_url}}" />
           </div>
@@ -104,38 +109,74 @@
                 <span><i class="fas fa-external-link-square-alt"></i> {{selected.orientation}} orientation</span>
               </div>
 
-              <div class="social">
+              <div class="mb-2">
+                <span><i class="fas fa-calendar"></i> {{selected.year}}</span>
+              </div>
+
+              <div class="social mt-4">
                 <h6>Interested in inquiring about a piece ? </h6>
                 <p>Get in touch on these social platforms</p>
-                <a href="https://www.instagram.com/wess__wesley/" target="_blank"><i class="fab fa-instagram-square"></i></a>
-                <a href="https://wa.me/254703926058?text=Hello%20Wesley,%20My%20name%20is%20****%20and%20I'm%20interested%20in%20inquiring%20about%20a%20piece%20..." target="_blank"><i class="fab fa-whatsapp-square"></i></a>
+
+                <div class="row">
+                  <div class="col-8 col-md-6">
+                    <a href="https://www.instagram.com/wess__wesley/" target="_blank" title="instagram"><i class="fab fa-instagram-square"></i></a>
+                    <a href="https://wa.me/254703926058?text=Hello%20Wesley,%20My%20name%20is%20****%20and%20I'm%20interested%20in%20inquiring%20about%20a%20piece%20..." target="_blank" title="whatsapp"><i class="fab fa-whatsapp-square"></i></a>
+
+                  </div>
+                  <div class="col-4 col-md-6 text-right pt-2">
+                    <button class="btn btn-close" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
               </div>
 
             </div>
           </div>
         </div>
 
-        <div *ngIf="selected.orientation === 'Landscape'">
+        <div *ngIf="selected.orientation === 'Landscape'" [@fadeInSmooth]>
           <img src="assets/images/{{selected?.image_url}}" />
 
           <br>
 
           <div class="content">
 
-            <div class="mb-2">
-              <span><i class="fas fa-file-image"></i> {{selected.size}} size</span>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-2">
+                  <span><i class="fas fa-file-image"></i> {{selected.size}} size</span>
+                </div>
+
+                <div class="mb-2">
+                  <span><i class="fas fa-external-link-square-alt"></i> {{selected.orientation}} orientation</span>
+                </div>
+
+                <div class="mb-2">
+                  <span><i class="fas fa-calendar"></i> {{selected.year}}</span>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="social">
+                  <h6>Interested in inquiring about a piece ? </h6>
+                  <p>Get in touch on these social platforms</p>
+
+                  <div class="row">
+                    <div class="col-8 col-md-6">
+                      <a href="https://www.instagram.com/wess__wesley/" target="_blank" title="instagram"><i class="fab fa-instagram-square"></i></a>
+                      <a href="https://wa.me/254703926058?text=Hello%20Wesley,%20My%20name%20is%20****%20and%20I'm%20interested%20in%20inquiring%20about%20a%20piece%20..." target="_blank" title="whatsapp"><i class="fab fa-whatsapp-square"></i></a>
+
+                    </div>
+                    <div class="col-4 col-md-6 text-right pt-2">
+                      <button class="btn btn-close" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div class="mb-2">
-              <span><i class="fas fa-external-link-square-alt"></i> {{selected.orientation}} orientation</span>
-            </div>
 
-            <div class="social">
-              <h6>Interested in inquiring about a piece ? </h6>
-              <p>Get in touch on these social platforms</p>
-              <a href="https://www.instagram.com/wess__wesley/" target="_blank"><i class="fab fa-instagram-square"></i></a>
-              <a href="https://wa.me/254703926058?text=Hello%20Wesley,%20My%20name%20is%20****%20and%20I'm%20interested%20in%20inquiring%20about%20a%20piece%20..." target="_blank"><i class="fab fa-whatsapp-square"></i></a>
-            </div>
+
+
 
           </div>
 
