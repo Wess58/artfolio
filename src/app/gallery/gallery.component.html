@@ -68,6 +68,16 @@
 
       </div>
 
+      <h3 [hidden]="year !== 'all' && year !== '2022'"><span>2022</span></h3>
+
+      <div class="row" [hidden]="year !== 'all' && year !== '2022'" [@fadeIn]>
+
+        <div class="col-6 col-md-3" *ngFor="let image of imgs_22;index as i">
+          <img id="myImg" src="assets/images/{{image.image_url}}" (click)="setOnModal(image.image_url)" data-toggle="modal" data-target="#imageModal" />
+        </div>
+
+      </div>
+
     </div>
 
 

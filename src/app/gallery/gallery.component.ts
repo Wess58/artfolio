@@ -7,6 +7,8 @@ import json_18 from '../jsons/2018.json';
 import json_19 from '../jsons/2019.json';
 import json_20 from '../jsons/2020.json';
 import json_21 from '../jsons/2021.json';
+import json_22 from '../jsons/2022.json';
+
 
 
 @Component({
@@ -36,6 +38,7 @@ export class GalleryComponent implements OnInit {
   imgs_19: any[] = json_19;
   imgs_20: any[] = json_20;
   imgs_21: any[] = json_21;
+  imgs_22: any[] = json_22;
   jointArrays: any;
 
   selected: any;
@@ -46,7 +49,7 @@ export class GalleryComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.jointArrays = this.imgs_16.concat(this.imgs_17, this.imgs_18, this.imgs_19, this.imgs_20, this.imgs_21);
+    this.jointArrays = this.imgs_16.concat(this.imgs_17, this.imgs_18, this.imgs_19, this.imgs_20, this.imgs_21,this.imgs_22);
     // console.log(this.jointArrays);
 
   }
