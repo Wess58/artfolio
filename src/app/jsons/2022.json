@@ -9,5 +9,11 @@
     "year": "2022",
     "orientation": "Landscape",
     "size": "A3"
+  },
+  {
+    "image_url": "2022-3.jpg",
+    "year": "2022",
+    "orientation": "Portrait",
+    "size": "A1"
   }
 ]
